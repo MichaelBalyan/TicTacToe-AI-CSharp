@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -306,7 +306,7 @@ namespace TicTacToe
 
                     if (defend == false)
                     {
-                        if (board[4] == -1 && board[8] > 0)
+                        if (board[4] == -1 && board[8] == 8)
                         {
                             board[8] = -2;
                             isPlayed = true;
@@ -319,7 +319,17 @@ namespace TicTacToe
                     }
                 }
 
-                if (attack == false && defend == false && isPlayed == false && board[6] >= 0)
+                if(attack == false && defend == false && isPlayed == false)
+                {
+                    if ((board[0] == -1 && board[8] == -1) || (board[2] == -1 && board[6] == -1))
+                    {
+                        board[7] = -2;
+                        defend = true;
+                        isPlayed = true;
+                    }
+                }
+
+                if (attack == false && defend == false && isPlayed == false && board[6] == 6)
                 {
                     if (board[1] == -1 && board[5] == -1)
                     {
