@@ -425,6 +425,11 @@ namespace TicTacToe
                         if (isDraw == false)
                         {
                             (board, winY) = game.TurnO(board, winningPositions, winX, winY);
+                            if (winY == true)
+                            {
+                                game.Print(board);
+                                break;
+                            }
                         }
                         isDraw = game.IsDraw(board, winningPositions);
 
