@@ -98,7 +98,6 @@ namespace TicTacToe
             return t;
         }
 
-
         public bool CanBeDefendedByTheLastField(int i, int[] board, int[,] winningPositions)
         {
             bool t = false;
@@ -319,7 +318,33 @@ namespace TicTacToe
                     }
                 }
 
-                if(attack == false && defend == false && isPlayed == false)
+                if (attack == false && defend == false && isPlayed == false && ((board[0] == -1 && board[5] == -1) || (board[1] == -1 && board[8] == -1)))
+                {
+                    if (board[2] == 2)
+                    {
+                        board[2] = -2;
+                    }
+                    else if(board[1] == 1)
+                    {
+                        board[1] = -2;
+                    }
+                    isPlayed = true;
+                }
+
+                if(attack == false && defend == false && isPlayed == false && (board[5] == -1 && board[6] == -1))
+                {
+                    if (board[8] == 8)
+                    {
+                        board[8] = -2;
+                    }
+                    else if (board[7] == 7)
+                    {
+                        board[7] = -2;
+                    }
+                    isPlayed = true;
+                }
+
+                if (attack == false && defend == false && isPlayed == false)
                 {
                     if ((board[0] == -1 && board[8] == -1) || (board[2] == -1 && board[6] == -1))
                     {
@@ -341,6 +366,8 @@ namespace TicTacToe
                     }
                     isPlayed = true;
                 }
+
+                
 
                 for (int i = 0; i < board.Length; i++)
                 {
@@ -442,7 +469,7 @@ namespace TicTacToe
                     }
                 }
                 catch (Exception) { Console.Clear(); }
-                ;
+                
             }
             if (winX == true && winY == false && isDraw == false)
             {
@@ -467,6 +494,10 @@ namespace TicTacToe
                 Console.WriteLine("Draw!");
                 Console.ResetColor();
             }
+
+            Console.WriteLine();
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadKey();
         }
     }
 }
