@@ -1,6 +1,6 @@
 # 🎮 Tic-Tac-Toe (C#)
 
-A C# implementation of the classic Tic-Tac-Toe game featuring a strategic computer opponent, built with a strong focus on clean architecture, Object-Oriented Programming, and maintainable code. The project demonstrates algorithm design, game state management, and decision-making logic.
+A C# implementation of the classic Tic-Tac-Toe game featuring a strategic computer opponent (my created "AI"), built with a strong focus on clean architecture, Object-Oriented Programming, and maintainable code. The project demonstrates algorithm design, game state management, and decision-making logic.
 
 ## ✨ Features
 
