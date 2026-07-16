@@ -513,7 +513,7 @@ namespace TicTacToe
             Console.ResetColor();
         }
 
-        public void StartGame()
+        public void Play()
         {
             while (winX == false && winY == false)
             {
@@ -580,10 +580,10 @@ namespace TicTacToe
             }
         }
 
-        public void Play()
+        public void StartGame()
         {
             CreateBoard();
-            StartGame();
+            Play();
             CheckWinner();
         }
     }
@@ -592,7 +592,7 @@ namespace TicTacToe
         static void Main(string[] args)
         {
             GameManagement gameManagement = new GameManagement();
-            gameManagement.Play();
+            gameManagement.StartGame();
 
             Console.WriteLine();
             Console.WriteLine("Press any key to exit...");
